@@ -12,5 +12,5 @@ h1 投稿画面の編集
    = f.text_area :description, row: 5,class:'form-control', id: 'post_description'
  = f.submit nil,class: 'btn btn-primary'
 
-#コード説明_ボタン部分_form.html.slimから呼び出し。
+#コード説明_ボタン部分_form.html.slimから呼び出し
 = render partial:'form',locals:{ post: @post}
