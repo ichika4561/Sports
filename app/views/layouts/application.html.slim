@@ -1,0 +1,18 @@
+script src=("https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+
+doctype html
+html
+  head
+    title
+      | Person_log
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    .app-title.navbar.navbar-expand-md.navbar-light.bg-light
+     .navbar-brand Sports
+    .container
+      - if flash.notice.present?
+        .alert.alert-success= flash.notice
+      = yield

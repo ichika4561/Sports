@@ -1,0 +1,27 @@
+h1 投稿内容の詳細
+
+.nav.justify-content-end
+ = link_to'一覧',post_path, class: 'nav-link'
+table.table.table-hover
+ tbody
+  tr
+    th= Post.human_attribute_name(:id)
+    td= @post.id
+  tr
+    th= Post.human_attribute_name(:name)
+    td= @post.name
+  tr
+    th= Post.human_attribute_name(:description)
+    th= simple_format(h(@post.description),{}, sanitize: false, wrapper_tag:"div")
+/   tr
+/     th= Post.human_attribute_name(:image)
+/     th= image_tag @post.image if @post.image.attached?
+
+  tr
+    th= Post.human_attribute_name(:created_at)
+    td= @post.created_at
+
+  tr
+    th= Post.human_attribute_name(:created_at) 
+    td= @post.update_at
+
