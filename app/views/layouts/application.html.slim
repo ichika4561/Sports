@@ -15,4 +15,10 @@ html
     .container
       - if flash.notice.present?
         .alert.alert-success= flash.notice
+      / フラッシュメッセージ
+      - if flash[:notice]
+        p= flash[:notice]
+      - if flash[:alert]
+        p= flash[:alert]
+
       = yield
