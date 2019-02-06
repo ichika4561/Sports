@@ -7,6 +7,6 @@ class Post < ApplicationRecord
     private
     
     def set_nameless_name
-        self.name ='名前無し' if name.blank
+        self.name ='名前無し' if name.blank?
     end
 end
