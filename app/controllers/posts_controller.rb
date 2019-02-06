@@ -31,7 +31,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     
     if @post.save
-       redirect_to posts_url, notice:"投稿「#{post.name}」を登録しました。"
+       redirect_to posts_url, notice:"投稿「#{@post.name}」を登録しました。"
     else
      render :new
     end
