@@ -60,11 +60,20 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+#VIEW関係
 gem 'slim-rails'
 gem 'html2slim'
 gem 'bootstrap'
+
+#ログイン機能
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+
+#./env
 gem 'dotenv-rails'
+
+#検索機能
+gem 'ransack'
+
