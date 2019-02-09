@@ -76,4 +76,3 @@ gem 'dotenv-rails'
 
 #検索機能
 gem 'ransack'
-
