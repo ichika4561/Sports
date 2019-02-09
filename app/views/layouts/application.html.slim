@@ -11,7 +11,20 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
     .app-title.navbar.navbar-expand-md.navbar-light.bg-light
-     .navbar-brand Sports
+     .navbar-brand= link_to 'Sports',posts_path,class:'nav-link'
+      
+      
+     ul.navbar-nav.ml-auto
+      - if user_signed_in?
+          = current_user.name
+
+      - if current_user
+         li.nav-item= link_to '投稿一覧',posts_path,class:'nav-link'
+         li.nav-item= link_to 'ログアウト',destroy_user_session_path,method: "delete",class:'nav-link'
+
+      - else
+         li.nav-item= link_to'ログイン',user_session_path,class:'nav-link'
+         
     .container
       - if flash.notice.present?
         .alert.alert-success= flash.notice
