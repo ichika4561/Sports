@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-
   def index
-    @posts = Post.all
+    @q = current_user.posts.ransack(params[:q])
+    @posts = @q.result(distinct: true).page(params[:page])
   end
 
   def show
@@ -9,7 +9,6 @@ class PostsController < ApplicationController
   end
 
   def new
-    
     @post =Post.new
   end
 
