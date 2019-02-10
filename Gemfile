@@ -76,3 +76,7 @@ gem 'dotenv-rails'
 
 #検索機能
 gem 'ransack'
+
+# schemaをmodelに書き出してくれる
+gem 'annotate'
+
