@@ -60,6 +60,10 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+#コーディングルール 
+gem 'rubocop'
+
 #VIEW関係
 gem 'slim-rails'
 gem 'html2slim'
@@ -76,3 +80,10 @@ gem 'dotenv-rails'
 
 #検索機能
 gem 'ransack'
+
+# schemaをmodelに書き出してくれる
+gem 'annotate'
+
+#ページネーション機能
+gem 'kaminari'
+

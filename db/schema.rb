@@ -16,9 +16,11 @@ ActiveRecord::Schema.define(version: 2019_02_06_110838) do
   enable_extension "plpgsql"
 
   create_table "posts", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "string"
-    t.text "description"
+    t.string "name", null: false, comment: "タイトル:空白無"
+    t.datetime "startdate", null: false, comment: "開催日時（開始）：空白無"
+    t.datetime "enddate", comment: "開催日時（終了）"
+    t.integer "number", comment: "参加人数"
+    t.text "description", comment: "その他（詳細）"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
