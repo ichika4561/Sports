@@ -31,7 +31,7 @@ class PostsController < ApplicationController
 
   def create
   post = current_user.id.posts.new(post_params)
-  post.save!
+  post.save! 
   redirect_to posts_url, notice:"投稿「#{post.name}」を登録しました。"
   end
   
