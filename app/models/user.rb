@@ -39,4 +39,5 @@ class User < ApplicationRecord
 
     user
   end
+  has_many :posts
 end
