@@ -7,6 +7,11 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.datetime :enddate, comment:  "開催日時（終了）"
       t.integer :number, comment:  "参加人数"
       t.text :description, comment:  "その他（詳細）"
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 6e6d6f5d866bb2fc1424c3d0c45c0e79655e3d9e
       t.timestamps
     end
   end
