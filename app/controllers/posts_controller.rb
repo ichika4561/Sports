@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts =Post.all
+    @posts =current_user.posts
     # @q = current_user.posts.ransack(params[:q])
     # @posts = @q.result(distinct: true).page(params[:page])
   end
@@ -30,9 +30,16 @@ class PostsController < ApplicationController
   end
 
   def create
-  post = current_user.posts.new(post_params)
-  post.save! 
-  redirect_to posts_url, notice:"投稿「#{post.name}」を登録しました。"
+    @post = current_user.posts.build(post_params)
+    if @post.save
+      flash[:notice] = "投稿「#{@post.name}」が保存されました"
+      redirect_to posts_path
+    else
+      redirect_to posts_path
+      flash[:alert] = "投稿「#{@post.name}」に失敗しました"
+    end
+  #書き方候補
+  # redirect_to posts_url, notice:"投稿「#{@post.name}」を登録しました。"
   end
   
   private
