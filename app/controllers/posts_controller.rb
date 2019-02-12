@@ -22,7 +22,7 @@ class PostsController < ApplicationController
     post.update!(post_params)
     redirect_to post_url,notice:"投稿「#{post.name}」を更新しました。"
   end
-  
+
   def destroy
    post = Post.find(params[:id])
    post.destroy
@@ -30,9 +30,9 @@ class PostsController < ApplicationController
   end
 
   def create
-  post = current_user.posts.new(post_params)
-  post.save! 
-  redirect_to posts_url, notice:"投稿「#{post.name}」を登録しました。"
+    post = current_user.posts.new(post_params)
+    post.save! 
+    redirect_to posts_url, notice:"投稿「#{post.name}」を登録しました。"
   end
   
   private
