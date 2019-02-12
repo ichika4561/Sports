@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts =current_user.posts
+    @posts = current_user.posts
     # @q = current_user.posts.ransack(params[:q])
     # @posts = @q.result(distinct: true).page(params[:page])
   end
@@ -10,11 +10,11 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post =Post.new
+    @post = Post.new
   end
 
   def edit
-    @post =Post.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def update
