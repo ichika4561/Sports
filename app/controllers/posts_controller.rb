@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @post =Post.all
+    @posts =Post.all
     # @q = current_user.posts.ransack(params[:q])
     # @posts = @q.result(distinct: true).page(params[:page])
   end
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   end
 
   def create
-  post = current_user.id.posts.new(post_params)
+  post = current_user.posts.new(post_params)
   post.save! 
   redirect_to posts_url, notice:"投稿「#{post.name}」を登録しました。"
   end

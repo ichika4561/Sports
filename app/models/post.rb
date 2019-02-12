@@ -16,8 +16,6 @@
 
 class Post < ApplicationRecord
   # Relationship: 投稿は一つのUserに関連する
-    belongs_to :user
-
   #use1対task多 
   belongs_to :user
 end
