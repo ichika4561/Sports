@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
   def index
-    @q = current_user.posts.ransack(params[:q])
-    @posts = @q.result(distinct: true).page(params[:page])
+    @posts =Post.all
+    # @q = current_user.posts.ransack(params[:q])
+    # @posts = @q.result(distinct: true).page(params[:page])
   end
-
+  
   def show
     @post = Post.find(params[:id])
   end
@@ -29,18 +30,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-    
-    if @post.save
-       redirect_to posts_url, notice:"投稿「#{@post.name}」を登録しました。"
-    else
-     render :new
-    end
+    post = current_user.posts.new(post_params)
+    post.save! 
+    redirect_to posts_url, notice:"投稿「#{post.name}」を登録しました。"
   end
   
   private
   def post_params
-   params.require(:post).permit(:name,:descripton)
+   params.require(:post).permit(:name, :areas, :genres, :startdate, :enddate, :number, :descripton)
   end
   
 end

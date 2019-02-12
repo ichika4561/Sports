@@ -10,19 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_06_110838) do
+ActiveRecord::Schema.define(version: 2019_02_11_110645) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "areas", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "name", null: false, comment: "タイトル:空白無"
-    t.datetime "startdate", null: false, comment: "開催日時（開始）：空白無"
-    t.datetime "enddate", comment: "開催日時（終了）"
-    t.integer "number", comment: "参加人数"
     t.text "description", comment: "その他（詳細）"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

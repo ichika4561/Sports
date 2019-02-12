@@ -64,6 +64,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #コーディングルール 
 gem 'rubocop'
 
+# デバック確認用
+gem 'pry-byebug', group: :development
+
 #VIEW関係
 gem 'slim-rails'
 gem 'html2slim'
