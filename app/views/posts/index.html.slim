@@ -16,13 +16,23 @@ table.table.table-hover
   thead.thead-default
     tr
       th= Post.human_attribute_name(:name)
+      th= "ユーザー名"
+      th= "エリア"
+      th= "ジャンル"
+      th= "開始"
+      th= "終了"
       th= Post.human_attribute_name(:created_at)
       th
   tbody
     - @posts.each do |post|
       tr
-        td= link_to post.name, post
-        td= post.created_at
+        td= link_to post.view_name, post
+        td= post.view_user_name
+        td= post.view_area_name
+        td= post.view_genre_name
+        td= post.view_started_at
+        td= post.view_ended_at
+        td= I18n.l(post.created_at, format: :long)
         td
           = link_to '編集', edit_post_path(post), class: 'btn btn-primary mr-3'
           = link_to '削除', post, method: :delete, data: { confirm: "投稿「#{post.name}」を削除します。よろしいですか？" }, class: 'btn btn-danger'
