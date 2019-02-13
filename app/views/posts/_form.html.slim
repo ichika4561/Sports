@@ -4,24 +4,24 @@
    li=message
 = form_with model: post,local: true do |f|
   .form-group
-    = f.label :name
+    = f.label :name※
     = f.text_field :name, class:'form-control',id:'post_name'
  
   .form-group
-    = f.label :kind
-    = f.text_field :kind, class:'form-control',id:'post_kind'
+    = f.label :genres※
+    = f.text_field :genres, class:'form-control',id:'post_genres'
  
   .form-group
-    = f.label :startdate
-    = f.text_field :startdate, class:'form-control',id:'post_startdate'
+    = f.label :started_at※
+    = f.text_field :started_at, class:'form-control',id:'spost_tarted_at'
   
   .form-group
-    = f.label :enddate
-    = f.text_field :enddate, class:'form-control',id:'post_senddate'
+    = f.label :ended_at
+    = f.text_field :ended_at, class:'form-control',id:'post_ended_at'
  
   .form-group
-    = f.label :address
-    = f.text_field :address, class:'form-control',id:'post_saddress'
+    = f.label :areas※
+    = f.text_field :areas, class:'form-control',id:'post_areas'
   
   .form-group
     = f.label :number
