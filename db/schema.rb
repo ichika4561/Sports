@@ -35,11 +35,7 @@ ActiveRecord::Schema.define(version: 2019_02_11_110645) do
     t.text "description", comment: "その他（詳細）"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id", null: false
-    t.integer "genre_id", null: false
-    t.integer "area_id", null: false
-    t.index ["area_id"], name: "index_posts_on_area_id"
-    t.index ["genre_id"], name: "index_posts_on_genre_id"
+    t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
