@@ -1,0 +1,33 @@
+- if post.errors.present?
+  ul#error_explanation
+    - post.errors.full_messages.each do |message|
+      li= message
+= form_with model: post, local: true do |f|
+  .form-group
+    = f.label :name
+    = f.text_field :name, class: 'form-control', id: 'post_name'
+
+  .form-group
+    = f.label :genres
+    = f.text_field :genre_id, class: 'form-control', id: 'post_genre_id'
+
+  .form-group
+    = f.label :started_at
+    = f.text_field :started_at, class: 'form-control', id: 'post_tarted_at'
+
+  .form-group
+    = f.label :ended_at
+    = f.text_field :ended_at, class: 'form-control', id: 'post_ended_at'
+
+  .form-group
+    = f.label :areas
+    = f.text_field :area_id, class: 'form-control', id: 'post_area_id'
+
+  .form-group
+    = f.label :number
+    = f.text_field :number, class: 'form-control', id: 'post_number'
+
+  .form-group
+    = f.label :description
+    = f.text_area :description, rows: 5, class: 'form-control', id: 'post_description'
+  = f.submit nil, class: 'btn btn-primary'
