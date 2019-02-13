@@ -1,5 +1,5 @@
 module Users
-  class PostsController < ::User::ApplicationController
+  class PostsController < ::Users::ApplicationController
     def index
       @posts = current_user.posts
       # @q = current_user.posts.ransack(params[:q])
@@ -21,7 +21,7 @@ module Users
     def update
       @post = Post.find(params[:id])
       if @post.update(post_params)
-        redirect_to posts_url, notice: "投稿「#{@post.name}」を更新しました。"
+        redirect_to url_for(action: :index), notice: "投稿「#{@post.name}」を更新しました。"
       else
         render :edit
       end
@@ -30,7 +30,7 @@ module Users
     def destroy
       @post = Post.find(params[:id])
       @post.destroy
-      redirect_to posts_url, notice: "投稿#{@post.name}を削除しました"
+      redirect_to url_for(action: :index), notice: "投稿#{@post.name}を削除しました"
     end
 
     def create

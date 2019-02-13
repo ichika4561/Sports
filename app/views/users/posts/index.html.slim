@@ -8,7 +8,7 @@ h1 一覧
 /   .form-group
 /     = f.submit class: 'btn btn-outline-primary'
   
-= link_to '新規投稿', new_post_path, class: 'btn btn-primary'
+= link_to '新規投稿', new_users_post_path, class: 'btn btn-primary'
 
 .mb-3
 / = paginate @posts
@@ -26,7 +26,7 @@ table.table.table-hover
   tbody
     - @posts.each do |post|
       tr
-        td= link_to post.view_name, post
+        td= link_to post.view_name, users_post_path(post)
         / td= post.view_user_name
         td= post.user.name
         td= post.view_area_name
@@ -35,6 +35,6 @@ table.table.table-hover
         td= post.view_ended_at
         td= I18n.l(post.created_at, format: :long)
         td
-          = link_to '編集', edit_post_path(post), class: 'btn btn-primary mr-3'
-          = link_to '削除', post, method: :delete, data: { confirm: "投稿「#{post.name}」を削除します。よろしいですか？" }, class: 'btn btn-danger'
+          = link_to '編集', edit_users_post_path(post), class: 'btn btn-primary mr-3'
+          = link_to '削除', users_post_path(post), method: :delete, data: { confirm: "投稿「#{post.name}」を削除します。よろしいですか？" }, class: 'btn btn-danger'
 
