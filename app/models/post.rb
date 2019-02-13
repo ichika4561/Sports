@@ -21,8 +21,7 @@ class Post < ApplicationRecord
   before_validation :set_nameless_name
   validates :name, presence: true
   validates :started_at, presence: true
-  
-  
+
   private
   
   def set_nameless_name

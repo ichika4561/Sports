@@ -10,6 +10,7 @@ module PostDecorator
   def view_ended_at
     return "" if ended_at.blank?
     I18n.l(ended_at, format: :long)
+    # ended_at.blank? ? "" : I18n.l(ended_at, format: :long)
   end
 
   def view_genre_name

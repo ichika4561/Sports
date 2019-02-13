@@ -27,7 +27,8 @@ table.table.table-hover
     - @posts.each do |post|
       tr
         td= link_to post.view_name, post
-        td= post.view_user_name
+        / td= post.view_user_name
+        td= post.user.name
         td= post.view_area_name
         td= post.view_genre_name
         td= post.view_started_at
