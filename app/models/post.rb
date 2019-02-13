@@ -16,6 +16,8 @@ class Post < ApplicationRecord
   #Relationship: 投稿は一つのUserに関連する
   #use1対task多 
   belongs_to :user
+  belongs_to :genre
+  belongs_to :area
   before_validation :set_nameless_name
   validates :name, presence: true
   validates :started_at, presence: true
