@@ -18,22 +18,25 @@ class PostsController < ApplicationController
   end
 
   def update
-    post = Post.find(params[:id])
-    post.update!(post_params)
-    redirect_to post_url,notice:"投稿「#{post.name}」を更新しました。"
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to posts_url,notice:"投稿「#{@post.name}」を更新しました。"
+    else
+      render :edit
+    end
   end
 
   def destroy
-   post = Post.find(params[:id])
-   post.destroy
-   redirect_to posts_url, notice:"投稿#{post.name}を削除しました"
+   @post = Post.find(params[:id])
+   @post.destroy
+   redirect_to posts_url, notice:"投稿#{@post.name}を削除しました"
   end
 
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
       flash[:notice] = "投稿「#{@post.name}」が保存されました"
-      render :new
+      redirect_to url_for(action: :index)
     else
       flash[:alert] = "投稿「#{@post.name}」に失敗しました"
       render :new
@@ -45,7 +48,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-   params.require(:post).permit(:name, :areas, :genres, :started_at, :ended_at, :number, :descripton)
+   params.require(:post).permit(:name, :area_id, :genre_id, :started_at, :ended_at, :number, :description)
   end
   
 end
