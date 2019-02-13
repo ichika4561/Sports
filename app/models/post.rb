@@ -20,20 +20,10 @@ class Post < ApplicationRecord
   validates :name, presence: true
   validates :started_at, presence: true
   
+  
   private
   
   def set_nameless_name
       self.name ='名前無し' if name.blank?
   end
-
-    before_validation :set_nameless_name
-    
-    validates :name, presence: true
-    validates :name, length: {maximum: 30 }
-    
-    private
-    
-    def set_nameless_name
-        self.name ='名前無し' if name.blank?
-    end
 end
