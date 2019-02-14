@@ -24,6 +24,10 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    active_decorator (0.9.0)
+    active_decorator_with_decorate_associations (0.0.4)
+      active_decorator (~> 0.7)
+      rails (>= 3.2)
     activejob (5.2.2)
       activesupport (= 5.2.2)
       globalid (>= 0.3.6)
@@ -252,6 +256,9 @@ GEM
     selenium-webdriver (3.141.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2, >= 1.2.2)
+    simple_form (4.1.0)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
     slim (4.0.1)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
@@ -300,6 +307,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_decorator
+  active_decorator_with_decorate_associations
   annotate
   bootsnap (>= 1.1.0)
   bootstrap
@@ -324,6 +333,7 @@ DEPENDENCIES
   rubocop
   sass-rails (~> 5.0)
   selenium-webdriver
+  simple_form
   slim-rails
   spring
   spring-watcher-listen (~> 2.0.0)

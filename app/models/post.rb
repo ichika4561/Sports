@@ -12,23 +12,19 @@
 #  description :text
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-
-
-
 class Post < ApplicationRecord
-  # Relationship: 投稿は一つのUserに関連する
+  #Relationship: 投稿は一つのUserに関連する
   #use1対task多 
   belongs_to :user
+  belongs_to :genre
+  belongs_to :area
+  before_validation :set_nameless_name
+  validates :name, presence: true
+  validates :started_at, presence: true
 
-    before_validation :set_nameless_name
-    
-    validates :name, presence: true
-    validates :name, length: {maximum: 30 }
-    
-    private
-    
-    def set_nameless_name
-        self.name ='名前無し' if name.blank?
-    end
-
+  private
+  
+  def set_nameless_name
+      self.name ='名前無し' if name.blank?
+  end
 end
