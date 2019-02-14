@@ -1,0 +1,16 @@
+- url = post.new_record? ? users_posts_path : users_post_path(post)
+= simple_form_for(post, url: url, html: { class: '' }) do |f|
+  .form-group
+    = f.input :name
+  .form-group
+    = f.association :area
+  .form-group
+    = f.association :genre
+  .form-group
+    = f.input :started_at
+  .form-group
+    = f.input :ended_at
+  .form-group
+    = f.input :description
+  .form-group
+    = f.button :submit, class: 'btn btn-primary'

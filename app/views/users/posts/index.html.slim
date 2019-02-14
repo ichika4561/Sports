@@ -1,0 +1,40 @@
+h1 一覧
+
+/ =search_form_for @q,class: 'mb-5' do |f|
+/   .form-group.row
+/     =f.label :name_cont, '名称',class: 'col-sm-2 col-form-label'
+/     .col-sm-10
+/       =f.search_field :name_cont, class: 'form-control'
+/   .form-group
+/     = f.submit class: 'btn btn-outline-primary'
+  
+= link_to '新規投稿', new_users_post_path, class: 'btn btn-primary'
+
+.mb-3
+/ = paginate @posts
+table.table.table-hover
+  thead.thead-default
+    tr
+      th= Post.human_attribute_name(:name)
+      th= "ユーザー名"
+      th= "エリア"
+      th= "ジャンル"
+      th= "開始"
+      th= "終了"
+      th= Post.human_attribute_name(:created_at)
+      th
+  tbody
+    - @posts.each do |post|
+      tr
+        td= link_to post.view_name, users_post_path(post)
+        / td= post.view_user_name
+        td= post.user.name
+        td= post.view_area_name
+        td= post.view_genre_name
+        td= post.view_started_at
+        td= post.view_ended_at
+        td= I18n.l(post.created_at, format: :long)
+        td
+          = link_to '編集', edit_users_post_path(post), class: 'btn btn-primary mr-3'
+          = link_to '削除', users_post_path(post), method: :delete, data: { confirm: "投稿「#{post.name}」を削除します。よろしいですか？" }, class: 'btn btn-danger'
+
