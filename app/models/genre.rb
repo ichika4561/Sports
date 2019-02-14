@@ -1,3 +1,4 @@
 class Genre < ApplicationRecord
-    validates :genre, presence: true
+    has_many :posts
+    validates :name, presence: true
 end
