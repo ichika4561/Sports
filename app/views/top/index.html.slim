@@ -1,0 +1,40 @@
+.top-eyecatch
+  .col-lg-12.text-center
+    h1 「SPORTS」
+    h4 サークルメンバーや運動仲間募集掲示板
+    = link_to "投稿を探す", posts_path, class: "btn btn-primary btn-lg"
+    = link_to "投稿をする", new_users_post_path, class: "btn btn-primary btn-lg"
+
+  = image_tag "eyecatch.png", class: "d-none d-md-block"
+  .top-eyecatch__block
+
+#search_document.top-section.documents
+  .container
+    .top-section__head
+    .col-lg-12.text-center
+      div
+        span.text-primary> メンバー
+        | として
+      h4
+        span 仲間やサークルを探す
+    .row
+      - @posts.each do |post|
+    ul.nav.justify-content-center
+      li.nav-item= link_to "ログイン", new_user_session_path, class: "btn btn-primary btn-lg"
+
+section#contact.bg-dark.text-white.section-top
+  .container
+    .row
+      .col-lg-8.mx-auto.text-center
+        h2.section-heading お問い合わせ
+        hr.my-4/
+    .row
+      .col-lg-12.mr-auto.text-center
+        a data-show-count="false" href="https://twitter.com/share?url=https://www.escola-pro.com&hashtags=[なんだろ]" target="_blank"
+          i.fab.fa-twitter.fa-3x.mb-3
+          i.fa.fa-envelope-o.fa-3x.mb-3.sr-contact
+        p
+          a href="https://twitter.com/ichika4561?lang=ja" target="_blank"  Sports 公式アカウント
+        p.mb-5 お問い合わせはTwitterのDMからお気軽に！
+
+footer.footer
