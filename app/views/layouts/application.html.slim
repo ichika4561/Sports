@@ -14,11 +14,9 @@ html
       .navbar-brand= link_to 'Sports', posts_path, class: 'nav-link'
 
 
-      ul.navbar-nav.ml-auto
-        - if user_signed_in?
-          = current_user.name
-
+      ul.navbar-nav.ml-auto  
         - if current_user
+          li.nav-item= link_to current_user.name, users_posts_path, class: 'nav-link'
           li.nav-item= link_to '投稿一覧', posts_path, class: 'nav-link'
           li.nav-item= link_to 'ログアウト', destroy_user_session_path, method: "delete", class: 'nav-link'
 

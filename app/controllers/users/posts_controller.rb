@@ -1,10 +1,9 @@
 module Users
   class PostsController < ::Users::ApplicationController
     def index
-      @posts = current_user.posts
-      # @q = current_user.posts.ransack(params[:q])
-      # @posts = @q.result(distinct: true).page(params[:page])
-    end
+      @q = Post.where("started_at > ?", Time.zone.now).order(started_at: :asc).ransack(params[:q])
+      @posts = @q.result(distinct: true).page(params[:page])
+      end
 
     def show
       @post = Post.find(params[:id])

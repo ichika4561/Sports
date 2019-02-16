@@ -257,8 +257,8 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  # pp "*" * 100
-  # pp ENV["FACEBOOK_ID"]
+  # pp "  *" * 100
+  pp ENV["FACEBOOK_ID"]
   config.omniauth :facebook, ENV['FACEBOOK_ID'], ENV['FACEBOOK_SECRET_KEY']
   #.envで管理が理想
   
