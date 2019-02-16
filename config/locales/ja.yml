@@ -10,11 +10,15 @@ ja:
   models:
       post: ポスト
   attributes:
-      post:
+      post: 投稿
       id: ID
-      name: 名称
+      name: イベント名
       description: 詳しい説明
       image: 画像
+      area: 開催場所
+      genre: 競技
+      started_at: 開始時間
+      ended_at: 終了時間
       created_at: 登録日時
       updated_at: 更新日時
   date:

@@ -1,12 +1,11 @@
 h1 一覧
-
-/ =search_form_for @q,class: 'mb-5' do |f|
-/   .form-group.row
-/     =f.label :name_cont, '名称',class: 'col-sm-2 col-form-label'
-/     .col-sm-10
-/       =f.search_field :name_cont, class: 'form-control'
-/   .form-group
-/     = f.submit class: 'btn btn-outline-primary'
+=search_form_for @q,class: 'mb-5' do |f|
+  .form-group.row
+    =f.label :name_cont, '投稿名',class: 'col-sm-2 col-form-label'
+    .col-sm-10
+      =f.search_field :name_cont, class: 'form-control'
+  .form-group
+    = f.submit class: 'btn btn-outline-primary'
   
 = link_to '新規投稿', new_users_post_path, class: 'btn btn-primary'
 
@@ -17,10 +16,10 @@ table.table.table-hover
     tr
       th= Post.human_attribute_name(:name)
       th= "ユーザー名"
-      th= "エリア"
-      th= "ジャンル"
-      th= "開始"
-      th= "終了"
+      th= Post.human_attribute_name(:area)  
+      th= Post.human_attribute_name(:genre) 
+      th= Post.human_attribute_name(:started_at)
+      th= Post.human_attribute_name(:ended_at)
       th= Post.human_attribute_name(:created_at)
       th
   tbody
