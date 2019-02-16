@@ -13,6 +13,7 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 class Post < ApplicationRecord
+  paginates_per 10
   #Relationship: 投稿は一つのUserに関連する
   #use1対task多 
   belongs_to :user
