@@ -1,1 +1,8 @@
 @import "bootstrap";
+.jumbotron {
+	padding-top: 0px;
+	background: url(eyecatch.png);
+	background-size: cover;
+	background-position: 50% 50%;
+	height: 400px;
+}
