@@ -36,4 +36,4 @@ table.table.table-hover
         td
           = link_to '編集', edit_users_post_path(post), class: 'btn btn-primary mr-3'
           = link_to '削除', users_post_path(post), method: :delete, data: { confirm: "投稿「#{post.name}」を削除します。よろしいですか？" }, class: 'btn btn-danger'
-
+= link_to "ユーザー情報編集", edit_user_registration_path(params[:id]), class: 'btn btn-primary mr-3'

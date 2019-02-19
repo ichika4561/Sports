@@ -13,14 +13,4 @@ table.table.table-hover
     tr
       th= Post.human_attribute_name(:description)
       th= simple_format(h(@post.description), {}, sanitize: false, wrapper_tag: "div")
-      /   tr
-      /     th= Post.human_attribute_name(:image)
-      /     th= image_tag @post.image if @post.image.attached?
-    /tr
-      th= Post.human_attribute_name(:created_at)
-      td= @post.created_at
-
-    /tr
-      th= Post.human_attribute_name(:created_at)
-      td= @post.updateu_at
 

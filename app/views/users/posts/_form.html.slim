@@ -2,10 +2,13 @@
 = simple_form_for(post, url: url, html: { class: '' }) do |f|
   .form-group
     = f.input :name
+  / データを入れたら選択式にする
   .form-group
-    = f.association :area
+    = f.input :area
+  / データを入れたら選択式にする
+  / = f.association :genre
   .form-group
-    = f.association :genre
+    = f.input :genre
   .form-group
     = f.input :started_at
   .form-group

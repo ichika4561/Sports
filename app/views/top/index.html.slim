@@ -6,8 +6,7 @@
     = link_to "投稿を探す", posts_path, class: "btn btn-primary btn-lg"
     = link_to "投稿をする", new_users_post_path, class: "btn btn-primary btn-lg"
   .top-eyecatch__block
-
-#search_document.top-section.documents
+  section#member.section-top
   .container
     .top-section__head
     .col-lg-12.text-center
@@ -20,7 +19,6 @@
       - @posts.each do |post|
     ul.nav.justify-content-center
       li.nav-item= link_to "ログイン", new_user_session_path, class: "btn btn-primary btn-lg"
-
 section#contact.bg-dark.text-white.section-top
   .container
     .row
