@@ -1,10 +1,10 @@
 =search_form_for @q,class: 'mb-5' do |f|
   .form-group.row
-    =f.label :name_cont, '投稿名',class: 'col-sm-2 col-form-label'
+    =f.label :name_cont, '投稿名', class: 'col-sm-2 col-form-label'
     .col-sm-10
       =f.search_field :name_cont, class: 'form-control' 
     / select形にしたい
-    =f.label :area_name_cont, '開催場所',class: 'col-sm-2 col-form-label'
+    =f.label :area_name_cont, '開催場所', class: 'col-sm-2 col-form-label'
     .col-sm-10
       =f.search_field :area_name_cont, class: 'form-control' 
     / select形にしたい
@@ -12,7 +12,7 @@
     .col-sm-10
       =f.search_field :genre_name_cont, class: 'form-control' 
     /  何日以降の検索 :select形にしたい
-    =f.label :started_at_gteq, '開始日',class: 'col-sm-2 col-form-label'
+    =f.label :started_at_gteq, '開始日', class: 'col-sm-2 col-form-label'
     .col-sm-10
       =f.search_field :started_at_gteq, class: 'form-control' 
   .form-group
