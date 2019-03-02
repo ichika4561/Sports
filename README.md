@@ -1,5 +1,5 @@
 # README
-### 公開URL: https://spotsports.herokuapp.com/
+### 公開URL: https://withsports.herokuapp.com/
 - コンセプト: 気軽に運動仲間を探したい人向けの掲示板。
 - ユーザー: 
      - メンバー募集中のスポーツサークル
