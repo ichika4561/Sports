@@ -33,8 +33,9 @@ require 'csv'
 
 #foreachは、ファイル（genre.csv）の各行を引数として、ブロック(do~endまでを範囲とする『引数のかたまり』)を繰り返し実行する
 #rowには、読み込まれた行が代入される
-CSV.foreach("db/genre.csv") do |row|
-  Genre = Genre.create(
+Genre.delete_all
+CSV.foreach("db/genre.csv", headers: true) do |row|
+  Genre.create(
     id:   row['id'],
     name: row['name'],
   )
