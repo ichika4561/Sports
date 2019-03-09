@@ -11,6 +11,21 @@ table.table.table-hover
     th= Post.human_attribute_name(:name)
     td= @post.name
   tr
+    th= Post.human_attribute_name(:area)
+    td= @post.area.name
+  tr
+    th= Post.human_attribute_name(:genre)
+    td= @post.genre.name
+  tr
+    th= Post.human_attribute_name(:started_at)
+    td= @post.started_at
+  tr
+    th= Post.human_attribute_name(:ended_at)
+    td= @post.ended_at
+  tr
+    th= Post.human_attribute_name(:created_at)
+    td= @post.created_at
+  tr
     th= Post.human_attribute_name(:description)
     th= simple_format(h(@post.description),{}, sanitize: false, wrapper_tag:"div")
 /   tr
