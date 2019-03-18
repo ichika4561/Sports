@@ -73,7 +73,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #コーディングルール 
-gem 'rubocop'
+gem 'rubocop', '~> 0.65.0', require: false
 
 # デバック確認用
 gem 'pry-byebug', group: :development
