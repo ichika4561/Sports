@@ -1,5 +1,7 @@
 FactoryBot.define do
-    factory :user do
-      nickname { "ユーザー(#{User.next_id})" }
-    end
+  factory :user do
+    name { 'テストユーザー' }
+    email { 'test@example.comm' }
+    password { 'password' }
   end
+end

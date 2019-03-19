@@ -8,14 +8,12 @@ h1 一覧
     = f.submit class: 'btn btn-outline-primary'
 .mb-3
 = paginate @posts
-table.table.table-hover
-  tbody
-     .row  
-      - @posts.each do |post|
-        .card style=("width: 18rem;") 
-          .card-body
-            h5.card-title #{post.view_user_name}
-            p.card-text #{post.view_area_name}
-            p.card-text #{post.view_genre_name}
-            = link_to "詳細", post_path(post), class: "btn btn-primary btn-lg"
-            
+.row
+  .col-sm-6.col-md-3
+    - @posts.each do |post|
+      .card style=("width: 18rem;")
+        .card-body.text-center
+          h5.card-title #{post.view_user_name}
+          p.card-text #{post.view_area_name}
+          p.card-text #{post.view_genre_name}
+          = link_to "詳細", post_path(post), class: "btn btn-outline-info mt-1"

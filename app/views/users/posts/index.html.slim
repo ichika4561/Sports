@@ -6,7 +6,7 @@ h1 一覧
       =f.search_field :name_cont, class: 'form-control'
   .form-group
     = f.submit class: 'btn btn-outline-primary'
-  
+
 = link_to '新規投稿', new_users_post_path, class: 'btn btn-primary'
 
 .mb-3
@@ -16,8 +16,8 @@ table.table.table-hover
     tr
       th= Post.human_attribute_name(:name)
       th= "ユーザー名"
-      th= Post.human_attribute_name(:area)  
-      th= Post.human_attribute_name(:genre) 
+      th= Post.human_attribute_name(:area)
+      th= Post.human_attribute_name(:genre)
       th= Post.human_attribute_name(:started_at)
       th= Post.human_attribute_name(:ended_at)
       th= Post.human_attribute_name(:created_at)

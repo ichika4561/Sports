@@ -375,7 +375,7 @@ DEPENDENCIES
   rails-controller-testing
   ransack
   rspec-rails (~> 3.7)
-  rubocop
+  rubocop (~> 0.65.0)
   sass-rails (~> 5.0)
   selenium-webdriver
   simple_form
