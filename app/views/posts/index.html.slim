@@ -11,11 +11,11 @@
     .mb-3
     = paginate @posts
     .row
-      .col-md-4.col-12.my-2
-        - @posts.each do |post|
-          .card style=("width: 18rem;")
-            .card-body.text-center
-              h5.card-title #{post.view_name}
-              p.card-text #{post.view_area_name}
-              p.card-text #{post.view_genre_name}
-              = link_to "詳細", post_path(post), class: "btn btn-outline-info mt-1"
+      - @posts.each do |post|
+        .col-md-4.col-12.my-2
+            .card style=("width: 18rem;")
+              .card-body.text-center
+                h5.card-title #{post.view_name}
+                p.card-text #{post.view_area_name}
+                p.card-text #{post.view_genre_name}
+                = link_to "詳細", post_path(post), class: "btn btn-outline-info mt-1"

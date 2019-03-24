@@ -23,6 +23,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable
 
   has_many :posts
+  has_many :likes
 
   # クラスメソッドは class << self 内に記述する
   # self.method_nameのような書き方はしないように
