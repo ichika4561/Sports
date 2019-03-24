@@ -1,14 +1,14 @@
 # README
 ### 公開URL: https://withsports.herokuapp.com/
 - コンセプト: 気軽に運動仲間を探したい人向けの掲示板。
-- ユーザー: 
+- ユーザー:
      - メンバー募集中のスポーツサークル
      - 単発的に運動仲間を探している個人
 　     （ジム行くときので良ければ一緒に行きませんか的な）
 
 
-### 参考URL: 
-- https://www.mo-ku-mo-ku.com/（MOKUMOKU）
+### 参考URL:
+- https://www.mo-ku-mo-ku.com/about（MOKUMOKU）
 - http://www.net-menber.com/（スポーツしようよ）
 - https://jmty.jp/osaka/com-spo/article-c3oa1（ジモティー）
 
