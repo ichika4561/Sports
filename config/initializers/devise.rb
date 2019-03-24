@@ -259,9 +259,9 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   # pp "  *" * 100
   # pp ENV["FACEBOOK_ID"]
-  config.omniauth :facebook, ENV['FACEBOOK_ID'], ENV['FACEBOOK_SECRET_KEY']
+  config.omniauth :facebook, ENV['1056515977805999'], ENV['734d9e97eac9b87eca6360d8ba945653']
   #.envで管理が理想
-  
+
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
