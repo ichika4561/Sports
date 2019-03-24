@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'top#index'
-  resources :posts, only: %w[index show]
+  resources :posts, only: %w[index show] do
+    resources :likes, only: %i(create destroy), shallow: true
+  end
   namespace :users do
     resources :posts
   end
