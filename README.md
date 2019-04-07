@@ -21,3 +21,4 @@
 - postsqls
 - slim
 - rails
+- env（パスワード管理の環境変数）
