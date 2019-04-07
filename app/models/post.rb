@@ -15,7 +15,7 @@
 class Post < ApplicationRecord
   paginates_per 10
   #Relationship: 投稿は一つのUserに関連する
-  #use1対task多 
+  #use1対task多
   belongs_to :user
   belongs_to :genre
   belongs_to :area
@@ -24,7 +24,7 @@ class Post < ApplicationRecord
   validates :started_at, presence: true
 
   private
-  
+
   def set_nameless_name
       self.name ='名前無し' if name.blank?
   end

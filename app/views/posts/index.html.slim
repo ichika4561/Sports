@@ -13,7 +13,7 @@
     .row
       - @posts.each do |post|
         .col-md-4.col-12.my-2
-          .card style=("width: 18rem;")
+          .card.card-stats.bs-gray.my-0.rounder
             .card-body.text-center
               h5.card-title #{post.view_name}
               p.card-text #{post.view_area_name}
